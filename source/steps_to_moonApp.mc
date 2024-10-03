@@ -21,6 +21,10 @@ class steps_to_moonApp extends Application.AppBase {
         return [ new steps_to_moonView() ];
     }
 
+    function getGlanceView() as [ WatchUi.GlanceView ] or [ WatchUi.GlanceView, WatchUi.GlanceViewDelegate ] or Null {
+        return [ new steps_to_moon_glanceView() ];
+    }
+
 }
 
 function getApp() as steps_to_moonApp {
