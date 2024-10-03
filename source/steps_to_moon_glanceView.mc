@@ -26,9 +26,9 @@ class steps_to_moon_glanceView extends WatchUi.GlanceView {
             stepsLeft = stepsToMoon - stepCount;
     
             myText = new WatchUi.Text({
-                :text => stepsLeft.toString() + "steps left ",
+                :text => stepsLeft.toString() + " steps",
                 :color => Graphics.COLOR_WHITE,
-                :font => Graphics.FONT_SMALL,
+                :font => Graphics.FONT_TINY,
                 :locX => LAYOUT_HALIGN_CENTER,
                 :locY => LAYOUT_VALIGN_CENTER
             });
@@ -42,10 +42,7 @@ class steps_to_moon_glanceView extends WatchUi.GlanceView {
             dc.clear();
             myText.draw(dc);
         }
-    
-        // Called when this View is removed from the screen. Save the
-        // state of this View here. This includes freeing resources from
-        // memory.
+        
         function onHide() as Void {
         }
 }

@@ -49,7 +49,7 @@ class steps_to_moonView extends WatchUi.View {
         myText.draw(dc);
 
         // because the moon is 100 x 100
-        dc.drawBitmap(dc.getWidth()/2 - 50, dc.getHeight()/2 - 100, moon);
+        dc.drawBitmap(dc.getWidth()/2, dc.getHeight()/3, moon);
     }
 
     // Called when this View is removed from the screen. Save the
