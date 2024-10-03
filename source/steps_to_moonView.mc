@@ -9,7 +9,6 @@ class steps_to_moonView extends WatchUi.View {
     private var stepsLeft = 0;
 
     private var myText;
-    private var stepsText;
 
     var moon;
 
@@ -19,7 +18,6 @@ class steps_to_moonView extends WatchUi.View {
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        // setLayout(Rez.Layouts.MainLayout(dc));
         moon = WatchUi.loadResource(Rez.Drawables.MoonIcon);
     }
 
@@ -33,17 +31,8 @@ class steps_to_moonView extends WatchUi.View {
         System.println("Current steps: " + stepCount);
         stepsLeft = stepsToMoon - stepCount;
 
-        stepsText = new WatchUi.Text({
-            :text => stepsLeft.toString(),
-            :color => Graphics.COLOR_WHITE,
-            :font => Graphics.FONT_SMALL,
-            :locX => LAYOUT_HALIGN_CENTER,
-            :locY => 155
-        });
-
-
         myText = new WatchUi.Text({
-            :text => "Steps left to the Moon",
+            :text => "Steps left to the Moon\n " + stepsLeft.toString(),
             :color => Graphics.COLOR_WHITE,
             :font => Graphics.FONT_SMALL,
             :locX => LAYOUT_HALIGN_CENTER,
@@ -58,7 +47,6 @@ class steps_to_moonView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
         dc.clear();
         myText.draw(dc);
-        stepsText.draw(dc);
 
         // because the moon is 100 x 100
         dc.drawBitmap(dc.getWidth()/2 - 50, dc.getHeight()/2 - 100, moon);
